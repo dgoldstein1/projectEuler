@@ -52,7 +52,6 @@ long largestPalindromeProduct(int digits) {
 	while (i > lim) {
 		for(long j = pow(10, digits) - 1 ; j > i ; j --) {
 			if(isPalindrome(i * j)) {
-				printf("adding %lu \n", i * j);
 				possibleAnswers[currIndex] = i * j;
 				currIndex++;
 			};
