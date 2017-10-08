@@ -34,6 +34,6 @@ w3m ${problem_number}.html | less
 
 ### Currenly solved
 
-1-5
+1-6
 
 **Author : David Goldstein**
