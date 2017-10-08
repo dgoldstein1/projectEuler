@@ -1,3 +1,4 @@
+PROBLEM_NUMBER=x
 CC=gcc
 CFLAGS=-Wall -std=c99 -w -lm
 
