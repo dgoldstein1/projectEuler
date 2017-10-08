@@ -57,7 +57,14 @@ char testGCD() {
 }
 
 int main() {
-	testGCD();
-	printf("%lu \n", lcm(60, 24));
-	return 0;
+	int lessThan20[9] = {20,19,18,17,16,14,13,12,11};
+
+	long currLcm = lessThan20[0];
+	for (int i = 0; i < 9 - 1; i++) {
+		currLcm = lcm(currLcm, lessThan20[i+1]);
+	}
+
+	printf("lcm of 1-20 is %lu \n",currLcm);
+
+	return 0; 
 }
