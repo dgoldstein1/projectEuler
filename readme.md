@@ -1,8 +1,6 @@
 ### Project Euler Problems
 
-website : https://projecteuler.net
-
-Going to try for 25 for starters
+website : https://projecteuler.net. Going to try for 25 for starters
 
 ### Running the problems
 
@@ -10,10 +8,13 @@ The majority of these problems are written in C. To run a problem, simply `cd` i
 
 ### Development
 
-To start working on a new problem, I've created a template script. run
+To start working on a new problem, I've created a template script. There is one dependency for `w3m` (install using `sudo apt-get install w3m`). For example, to create a directory for the problem 8, run
 ```sh
-./createFolderFromTemplate.sh ${problem_number}
+./createFolderFromTemplate.sh 8
+ls 8
+makefile  problem_8.c  problem_8.txt
 ```
+
 to create a new directory with template code in it. You can also bulk create templated folders by running
 ```sh
 for i in {start..end}; do
@@ -23,17 +24,8 @@ done
 
 GCC version used: `Ubuntu 4.8.5-2ubuntu1~14.04.1`.
 
-### Viewing Problems Locally
-
-All folders included a downloaded html file with the problem in it. To open the problem html in terminal run:
-```sh
-# install w3m if not already installed
-sudo apt-get install w3m
-w3m ${problem_number}.html | less
-```
-
 ### Currenly solved
 
-1-6
+1-7
 
 **Author : David Goldstein**
