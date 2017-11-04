@@ -31,23 +31,29 @@ int main() {
 	// row by row
 	for (int row = 0 ; row < 20 ; row ++) {
 		for (int col = 0 ; col < 20 ; col ++) {
+			// get product of rows
+			if (col < 17) {
+				n = (long) grid[row][col] * grid[row][col+1] * grid[row][col+2] * grid[row][col+3];
+				if (n > curr) curr = n;
+			}
+
 			// get product of cols
-			n = (long) grid[row][col] * grid[row][col+1] * grid[row][col+2] * grid[row][col+3];
-			printf("[%i] - [%i] - [%i] - [%i] \n", grid[row][col], grid[row][col+1],grid[row][col+2],grid[row][col+3]);
-			if (n > curr) curr = n;
-			// get product of rows. 
-			n = (long) grid[row][col] * grid[row+1][col] * grid[row+2][col] * grid[row+3][col];
-			if (n > curr) curr = n;
+			if (row < 17) {
+				n = (long) grid[row][col] * grid[row+1][col] * grid[row+2][col] * grid[row+3][col];
+				if (n > curr) curr = n;
+			}
 
 			//diagonal down right
-			n = (long) grid[row][col] * grid[row+1][col+1] * grid[row+2][col+2] * grid[row+3][col+3];
-			if (n > curr) curr = n;
+			if (row < 17 && col < 17) {
+				n = (long) grid[row][col] * grid[row+1][col+1] * grid[row+2][col+2] * grid[row+3][col+3];
+				if (n > curr) curr = n;
+			}
+
 			// diagonal up right
-			n = (long) grid[row][col] * grid[row][col-1] * grid[row][col-2] * grid[row][col-3];
-			if (n > curr) curr = n;
-			// diagonal down left
-			n = (long) grid[row][col] * grid[row-1][col] * grid[row-2][col] * grid[row-3][col];
-			if (n > curr) curr = n;
+			if (row >= 3 && col < 17) {
+				n = (long) grid[row][col] * grid[row-1][col+1] * grid[row-2][col+2] * grid[row-3][col+3];
+				if (n > curr) curr = n;
+			}
 		}
 	}
 	printf("%i \n", curr);
