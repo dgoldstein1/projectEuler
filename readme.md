@@ -1,14 +1,19 @@
 ### Project Euler Problems
 
-website : https://projecteuler.net. Going to try for 25 for starters
+website : https://projecteuler.net. Going to try for 25 for starters, all written in C.
+
+### Dependencies
+
+- `w3m` (for downloading the problems http://w3m.sourceforge.net/)
+- `gmp` (c / c++ library for big numbers https://gmplib.org/)
 
 ### Running the problems
 
-The majority of these problems are written in C. To run a problem, simply `cd` into a problem directory and run `make`. This will build, run, and clean the direcory. 
+To run a problem, simply `cd` into a problem directory and run `make`. This will build, run, and clean the direcory. The answer will be outputted to the console.
 
 ### Development
 
-To start working on a new problem, I've created a template script. There is one dependency for `w3m` (install using `sudo apt-get install w3m`). For example, to create a directory for the problem 8, run
+To start working on a new problem, I've created a template script. For example, to create a directory for the problem 8, run
 ```sh
 ./createFolderFromTemplate.sh 8
 ls 8
