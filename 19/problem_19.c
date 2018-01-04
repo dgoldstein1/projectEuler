@@ -30,7 +30,7 @@ struct Tuple sundaysOnFirstDay(int startingDay, int year) {
 	};
 
 	// update february if leap year
-	bool isLeapYear = // year is divisible by 4 AND (is not century or is 400th century)
+	int isLeapYear = // year is divisible by 4 AND (is not century or is 400th century)
 		(year % 4 == 0) && ((year % 100 != 0) || year % 400 == 0);
 
 	// if it's a leap year, february has an extra day
@@ -43,7 +43,7 @@ struct Tuple sundaysOnFirstDay(int startingDay, int year) {
 	// }
 
 	// TODO
-	Tuple t = { 1, 1 };
+	struct Tuple t = { 1, 1 };
 
 	return t;
 
@@ -53,11 +53,14 @@ int main() {
 	
 	// number of sundays on first of the month
 	int sundaysOnFirst = 0;
+	int currIndex = 1; // 1 jan 1901 is a monday
 
-	int index = 1; // 1 jan 1990 is a monday
-
-	printf("%i\n", sundaysOnFirstDay(1, 1905).index);
-	
-
+	// loop through years Jan 1901 => Dec 31 2000
+	for (int year = 1900; year <= 2000; ++year) {
+		Tuple t = sundaysOnFirstDay(currIndex, year);
+		sundaysOnFirst += t.count;
+		currIndex = t.index;
+	}
+	printf("%i\n", sundaysOnFirst);
 	return 0;
 }
