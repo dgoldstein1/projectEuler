@@ -31,6 +31,6 @@ GCC version used: `Ubuntu 4.8.5-2ubuntu1~14.04.1`.
 
 ### Currenly solved
 
-1-7
+1-21
 
 **Author : David Goldstein**
