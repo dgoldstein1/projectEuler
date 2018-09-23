@@ -1,15 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-/**
- * proper divisors e.g. 
- * 220 = 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110 = 284;
- * 284 = 1, 2, 4, 71 and 142; so d(284) = 220.
- **/
-int hasAmicablePair(int a) {
-	int b = sumOfDivisors(a);
-	return(a != b && sumOfDivisors(b) == a);
-}
 
 /**
  * @param {long} number
@@ -54,6 +45,17 @@ int sumOfDivisors(int n) {
 
 	return sumOfFactors;
 }
+/**
+ * proper divisors e.g. 
+ * 220 = 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110 = 284;
+ * 284 = 1, 2, 4, 71 and 142; so d(284) = 220.
+ **/
+int hasAmicablePair(int a) {
+    int b = sumOfDivisors(a);
+    return(a != b && sumOfDivisors(b) == a);
+}
+
+
 
 int main() {
 	int amicablePairSum = 0;
