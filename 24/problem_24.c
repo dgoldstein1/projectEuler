@@ -14,6 +14,19 @@ void _printArray(int array[], int length) {
 	printf("]\n");
 }
 
+/* Function to reverse arr[] from start to end
+ * https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
+ */
+void _rvereseArray(int arr[], int start, int end) {
+    while (start < end) {
+        int temp = arr[start]; 
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    } 
+} 
+
 /**
  * gets next sequence in permutation
  * https://www.nayuki.io/page/next-lexicographical-permutation-algorithm
@@ -22,7 +35,6 @@ void _printArray(int array[], int length) {
  * @return {void} pass by reference
  **/
 void getNext(int curr[], int length) {
-	_printArray(curr, length);
 	// first find 'pivot'
 	int pivot = -1;
 	int pivotValue = -1;
@@ -54,14 +66,12 @@ void getNext(int curr[], int length) {
 			// switch them out
 			minElSuffxLTPivot = i;
 			minElSuffxLTPivotValue = curr[i];
+			// switch the values
+			curr[minElSuffxLTPivot] = pivotValue;
+			curr[pivot] = minElSuffxLTPivotValue;
 			break;
 		}
 	}
-	
-	printf("pivot %d\n", pivotValue);
-	printf("minElSuffxLTPivot : %d\n", minElSuffxLTPivotValue);
-
-
 	// if could not find a min value, likely error
 	// but could also be last permutation
 	if (minElSuffxLTPivot == -1) {
@@ -69,18 +79,20 @@ void getNext(int curr[], int length) {
 		return;
 	}
 
-
+	// now reverse suffix
+	_rvereseArray(curr, pivot + 1, length - 1);
 }
 
 int main() {
 
-	// int length = 3;
-	// int permuation[length] = {0,1,2};
-	int length = 7;
-	int permuation[length] = {0, 1, 2, 5, 3, 3, 0};
+	int length = 10;
+	int permuation[10] = {0,1,2,3,4,5,6,7,8,9};
 
-	getNext(permuation, length);
+	for (int i = 1; i < 1000000; i++) {
+		getNext(permuation, length);
+	}
 
+	_printArray(permuation, length);
 
 	return 0;
 }
