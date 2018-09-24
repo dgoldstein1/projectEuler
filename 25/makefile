@@ -1,6 +1,6 @@
 PROBLEM_NUMBER=25$
 CC=gcc
-CFLAGS=-Wall -std=c99 -w -lm
+CFLAGS=-Wall -std=c99 -w -lm -lgmp
 
 problem_${PROBLEM_NUMBER}=problem_${PROBLEM_NUMBER}.c
 problem_${PROBLEM_NUMBER}_Object=problem_${PROBLEM_NUMBER}.o
