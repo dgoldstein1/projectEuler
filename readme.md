@@ -1,6 +1,6 @@
 ### Project Euler Problems
 
-website : https://projecteuler.net. Going to try for 25 for starters, all written in C.
+website : https://projecteuler.net. Going to try for 25 for starters.
 
 ### Dependencies
 
@@ -29,8 +29,8 @@ done
 
 GCC version used: `Ubuntu 4.8.5-2ubuntu1~14.04.1`.
 
-### Currenly solved
+## Authors
 
-1-21
+- **David Goldstein** - [DavidCharlesGoldstein.com](http://www.davidcharlesgoldstein.com/?github-project-euler) - [Decipher Technology Studios](http://deciphernow.com/)
 
 **Author : David Goldstein**
