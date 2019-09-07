@@ -5,21 +5,22 @@
 //   n[0]**5 + n[1]**5 ... n[j]**5 
 //      equals number 
 //   n[0:j] joined together
-char isSumOfFithPower(double n[], int length) {
+char isSumOfPower(double n[], int length, int power) {
 	double nJoinedTogether = 0;
+	double sumOfPowers = 0;
 	// start at end	
-	for (int i = length - 1; i >= 0; i--) {
-		nJoinedTogether += pow(10, i) * n[i];
+	for (int i = 0; i < length; i++) {
+		nJoinedTogether += pow(10, length - 1 - i) * n[i];
+		sumOfPowers += pow(n[i],power);
 	}
-	printf("%lf\n", nJoinedTogether);
-
-
-	return 1;
+	printf("sumOfPowers: %lf \n", sumOfPowers);
+	printf("nJoinedTogether: %lf \n", nJoinedTogether);
+	return nJoinedTogether == sumOfPowers;
 }
 
 int main() {
-	double test[] = {1,2,3,4,5,6};
-	int length = 6;
-	printf("%d\n", isSumOfFithPower(test, length));
+	double test[] = {1,6,3,4};
+	int length = 4;
+	printf("%d\n", isSumOfPower(test, length, 4));
 	return 0;
 }
