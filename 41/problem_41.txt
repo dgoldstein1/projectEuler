@@ -1,0 +1,34 @@
+Project Euler
+   Search Problems   RSS Feed
+[ ]
+
+  • About
+  • Archives
+  • Recent
+  • News
+  • Register
+  • Sign In
+
+projecteuler.net
+
+Pandigital Prime
+
+[file_html] [info]Published on Friday, 11th April 2003, 06:00 pm; Solved by
+75652;
+Difficulty rating: 5%
+
+Problem 41
+
+We shall say that an $n$-digit number is pandigital if it makes use of all the
+digits $1$ to $n$ exactly once. For example, $2143$ is a $4$-digit pandigital
+and is also prime.
+
+What is the largest $n$-digit pandigital prime that exists?
+
+
+
+Project Euler: Copyright Information | Privacy Policy
+
+The page has been left unattended for too long and that link/button is no
+longer active. Please refresh the page.
+
